@@ -2,7 +2,7 @@
 
 # Module: Nexus Metro RTI
 
-The `MMM-NexusMetroRTI` module is compatible with the [MagicMirror²](https://docs.magicmirror.builders/) ([Github Repository](https://github.com/MagicMirrorOrg/MagicMirror)) project and can display live estimates of train arrival times at stations along the Nexus Tyne and Wear Metro, located in the North-East of the UK. It utilised their own undocumented API.
+The `MMM-NexusMetroRTI` module is compatible with the [MagicMirror²](https://docs.magicmirror.builders/) ([Github Repository](https://github.com/MagicMirrorOrg/MagicMirror)) project and can display live estimates of train arrival times at stations along the Nexus Tyne and Wear Metro, located in the North-East of the UK. It utilises their own undocumented API.
 
 #### Examples
 
@@ -11,15 +11,15 @@ The `MMM-NexusMetroRTI` module is compatible with the [MagicMirror²](https://do
 
 ## Requirements and Optional Dependencies
 
-This module utilised a public API which requires no API key. Should this change in the future please report the issue within the Github repository.
+This module utilises a public API which requires no API key. Should this change in the future please report the issue within the Github repository.
 
-You will need to configure the station and platform by using the station codes which listed [`./public/cache/stations.json`](./cache/stations.json) and platform numbers in [`./public/cache/platforms.json`](./cache/platforms.json).
+You will need to configure the station and platform by using the station codes which listed [`./public/cache/stations.json`](./public/cache/stations.json) and platform numbers in [`./public/cache/platforms.json`](./public/cache/platforms.json).
 
 NOTE: These files are used by the module to reduce API calls since the station information is rarely changed. You can update the cached information by setting the config property `updateCacheOnStart: true`.
 
 ### Calvert Font
 
-As displayed in the example above, the module can use the Calvert font as is used in branding on the Tyne and Wear Metro. Because of licencing, the font is not included in the repository. This font is available to be licensed by Monotype [here](https://www.myfonts.com/collections/calvert-font-monotype-imaging),  or otherwise available online from sources like [here]("https://fontshub.pro/font/calvert-download"). If you would like to use the font, obtain a copy and save it in `./public/fonts/` with the filename `Calvert-MT` and extension either `ttf`, `woff`, or `woff2`.
+As displayed in the example above, the module can use the Calvert font as is used in branding on the Tyne and Wear Metro. Because of licencing, the font is not included in the repository. This font is available to be licensed by Monotype [here](https://www.myfonts.com/collections/calvert-font-monotype-imaging),  or otherwise available online from sources like [here](https://fontshub.pro/font/calvert-download). If you would like to use the font, obtain a copy and save it in `./public/fonts/` with the filename `Calvert-MT` and extension either `ttf`, `woff`, or `woff2`.
 
 ## Using the module
 
@@ -70,7 +70,7 @@ The following properties can be configured:
 			</td>
 		</tr>
 		<tr>
-			<td><code>colorise</code><br></td>
+			<td><code>colorize</code><br></td>
 			<td>
                 Whether or not to color train list items by their line,
                 <b style="color:#3fba5a;">Green</b> or
@@ -194,7 +194,7 @@ The following properties can be configured:
                     </li>
                     <li>
                         <code>{{dueIn}}</code> - Time in minutes before
-                    <li>
+                    </li>
                     <li>
                         <code>{{line}}</code> - Line code (One of:
                         <code>"GREEN"</code>
@@ -202,9 +202,7 @@ The following properties can be configured:
                     </li>
                 </ul>
                 <b>Example:</b>
-                <code>
-                    "{{eventTypeString}} {{eventStation}} at {{eventTime}}"
-                </code> displays
+		<code>"{{eventTypeString}} {{eventStation}} at {{eventTime}}"</code> displays
                 <code>"Departed from Sunderland at 12:01"</code>
                 <br/>
                 <b>Default Value:</b>
