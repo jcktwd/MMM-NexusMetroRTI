@@ -1,6 +1,6 @@
 node_modules/**/*
 
 # Ignore this
-fonts/*
+public/fonts/*
 # Don't ignore this
-!fonts/TW-Metro-Icons.woff
+!public/fonts/TW-Metro-Icons.woff
