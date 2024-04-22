@@ -1,0 +1,73 @@
+{# Copyright (C) 2024 jcktwd #}
+<i class="
+  NMRTI_METRO_LOGO
+  fa-solid
+  fa-xs
+  icon-twmetro-logo
+{% if config.colorize %}
+  NMRTI_YELLOW
+{% endif %}
+  "
+  style="visibility:{{ "visible" if config.showStation else "hidden" }}"
+  ></i>
+<div class="NMRTI_CONTENT">
+  <div
+    class="NMRTI_HEADER_TEXT">
+    <span
+      class="NMRTI_STATION"
+      style="display:{{ "block" if config.showStation else "none" }};">
+      {{ data.station }}
+    </span>
+    <span
+      class="NMRTI_PLATFORM"
+      style="display:{{"block" if config.showPlatform else "none" }};">
+      {{ data.platform }}
+    </span>
+  </div>
+  <div class="NMRTI_TRAIN_LIST">
+{% if data.trains.length === 0 %}
+    <div class="NMRTI_TRAIN_ITEM">
+      <i class="NMRTI_TRAIN_ICON fa-solid fa-triangle-exclamation"></i>
+      <div class="NMRTI_TRAIN_DESC">
+        No trains
+      </div>
+    </div>
+{% else %}
+  {% for train in data.trains %}
+    <div class="NMRTI_TRAIN_ITEM">
+      <i class="NMRTI_TRAIN_ICON fa-solid icon-twmetro-train
+    {% if config.colorize %}
+        NMRTI_{{ train.line }}
+    {% endif %}
+        ">
+      </i>
+      <div class="NMRTI_TRAIN_TEXT">
+        <span
+          class="NMRTI_DESTINATION 
+    {% if config.colorize %}
+            NMRTI_{{ train.line }}
+    {% endif %}
+            "
+          style="display:{{ "block" if config.showDestination else "none" }};">
+          {{ train.destination }}
+        </span>
+        <span
+          class="NMRTI_LOCATION"
+          style="display:{{ "block" if config.showLocation else "none" }};">
+          {{ train.locationString }}
+        </span>
+      </div>
+      <span
+        class="NMRTI_ETA"
+        style="display:{{ "block" if config.showDueIn else "none" }};">
+    {% if train.dueIn == -1 %}
+        Arr
+    {% elif train.dueIn == 0 %}
+        Due
+    {% else %}
+        {{ train.dueIn }}m
+    {% endif %}
+      </span>
+    </div>
+    {% endfor %}
+{% endif %}

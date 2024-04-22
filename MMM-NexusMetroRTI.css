@@ -1,0 +1,162 @@
+/*
+Copyright (C) 2024 jcktwd
+*/
+
+@font-face {
+    font-family: "Calvert MT";
+    src: url("public/fonts/Calvert-MT.woff2") format("woff2"),
+         url("public/fonts/Calvert-MT.woff") format("woff"),
+         url("public/fonts/Calvert-MT.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'TW Metro Icons';
+    src:  url('public/fonts/TW-Metro-Icons.woff') format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+[class^="icon-twmetro-"], [class*=" icon-twmetro-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'TW Metro Icons' !important;
+    
+}
+
+.icon-twmetro-logo:before {
+    content: "\f555f";
+}
+
+.icon-twmetro-train:before {
+    content: "\f555e";
+}
+
+/* Some sensible default width so the module isn't constantly resizing with each
+DOM update */
+
+.module.MMM-NexusMetroRTI {
+    min-width: 360px;
+}
+
+/* Collapse some of the margin between consecutive modules */
+.module.MMM-NexusMetroRTI+.module.MMM-NexusMetroRTI {
+    margin-top: calc(8px - var(--gap-modules));
+}
+
+.NMRTI_GREEN {
+    color: #3fba5a;
+}
+
+.NMRTI_YELLOW {
+    /* color: #ffb63a; */
+    color: #fdb826
+}
+
+
+/* Module is inside a flexbox */
+.module.MMM-NexusMetroRTI > .module-content > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-items: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0px 8px;
+}
+
+
+.NMRTI_METRO_LOGO {
+    margin-top: 6px;
+    font-size: 32px;
+    line-height: 1;
+}
+
+
+/* */
+.NMRTI_CONTENT {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.NMRTI_HEADER_TEXT {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 2px 0px;
+}
+
+.NMRTI_STATION {
+    font-family: "Calvert MT", "Roboto", "Sans-serif";
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 1;
+}
+
+.NMRTI_PLATFORM {
+    font-family: "Roboto Condensed";
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+div.NMRTI_TRAIN_LIST {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+
+div.NMRTI_TRAIN_ITEM {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px 8px;
+    height: 32px;
+    width: 100%;
+    padding: 0px;
+    margin: 2px 0px;
+}
+
+div.NMRTI_TRAIN_ITEM > .NMRTI_TRAIN_ICON {
+    font-size: 22px;
+    line-height: 1;
+}
+
+div.NMRTI_TRAIN_TEXT {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    height: 100%;
+}
+
+div.NMRTI_TRAIN_TEXT > span.NMRTI_DESTINATION {
+    font-family: "Calvert MT", "Roboto", "Sans-serif";
+    font-size: 14px;
+    line-height: 1;
+    margin: auto 0px;
+}
+
+div.NMRTI_TRAIN_TEXT > span.NMRTI_LOCATION {
+    font-family: "Roboto Condensed";
+    font-size: 14px;
+    line-height: 1;
+    margin: auto 0px;
+}
+
+div.NMRTI_TRAIN_ITEM > span.NMRTI_ETA {
+    font-family: "Roboto Condensed";
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    font-size: var(--font-size);
+}
+
