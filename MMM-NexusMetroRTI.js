@@ -56,7 +56,7 @@ Module.register("MMM-NexusMetroRTI", {
 	},
 
     getStyles () {
-		return ["MMM-NexusMetroRTI.css"];
+		return ["MMM-NexusMetroRTI.css", "font-awesome.css",];
 	},
 
 
